@@ -26,7 +26,7 @@ def get_books():
     return books
 
 @app.get("/books/{id}",response_model=schemas.BookResponseSchema,status_code=status.HTTP_200_OK)
-def get_book_by_id(id: int):
+def get_book_by_id(id: PositiveInt):
     """
     get_book_by_id function searches and returns the book with the provided id
 

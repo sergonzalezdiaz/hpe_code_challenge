@@ -11,7 +11,7 @@ class BookBaseSchema(BaseModel):
 
 class BookResponseSchema(BaseModel):
     """Book schema for the responses including the id"""
-    id: int
+    id: PositiveInt
     title: str
     number_of_pages: PositiveInt
     author: str

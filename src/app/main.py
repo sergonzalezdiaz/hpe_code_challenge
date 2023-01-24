@@ -1,5 +1,6 @@
 from fastapi import FastAPI
 from fastapi import status,HTTPException
+from pydantic import PositiveInt
 from app.database import SessionLocal,Base,engine
 from sqlalchemy.exc import IntegrityError
 from app import models, schemas
@@ -67,7 +68,7 @@ def create_book(book:schemas.BookBaseSchema):
         raise HTTPException(status_code=400,detail="Book already exists")
 
 @app.post("/reserve",status_code=status.HTTP_200_OK)
-def reserve_book(books:List[int]):
+def reserve_book(books:List[PositiveInt]):
     """
     reserve_book function reserves available books from a given list provided by parameter
 

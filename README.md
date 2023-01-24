@@ -70,7 +70,7 @@ In similar way the isbn has been selected to be unique and not null (it is not a
 Since the International Standard Book Number (ISBN) is already a unique identifier (each book has its own ISBN, in fact different editions of a book have different ISBNs) I think it would be better to eliminate the id and use the isbn as primary key and only index of the table. This decission will impact the API creation since the get_book_by_id and the reserve_book should be based on the isbn instead of the id.
 
 ### Data validation
-In order to validate the data received and sent in the API I used Pydantic. The [schemas.py](./src/app/schemas.py) file contains the book models for the requests and the responses. With this data validation it is ensured that the id is an positive integer, the title is a string, the number of pages is a positive integer, the autor is a string, the ISBN is a string of 13 digits, the number of copies is a non negative integer and the available copies is a is a non negative integer.
+In order to validate the data received and sent in the API I used Pydantic. The [schemas.py](./src/app/schemas.py) file contains the book models for the requests and the responses. With this data validation it is ensured that the id is a positive integer, the title is a string, the number of pages is a positive integer, the autor is a string, the ISBN is a string of 13 digits, the number of copies is a non negative integer and the available copies is a is a non negative integer.
 
 ## Prerequisities
 In order to execute the provided solution it is necessary to install docker compose. The installation instructions of docker compose can be found in [https://docs.docker.com/compose/install/](https://docs.docker.com/compose/install/)
